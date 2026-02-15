@@ -167,31 +167,45 @@
         
         <div class="button-group">
             <a href="apps/nelson9608-calculator-xdc-V1.0.0.xdc" download class="button button-primary">⬇️ Скачать .xdc</a>
-            <button class="button button-secondary" onclick="downloadAndOpen()">📱 Открыть в Delta Chat</button>
+            <button class="button button-secondary" onclick="openInDeltaChat('nelson9608-calculator-xdc-V1.0.0.xdc')">📱 Открыть в Delta Chat</button>
         </div>
     </div>
 
     <script>
-        function downloadAndOpen() {
-            const fileName = "nelson9608-calculator-xdc-V1.0.0.xdc";
+        async function openInDeltaChat(fileName) {
             const fileUrl = "apps/" + fileName;
             
-            fetch(fileUrl)
-                .then(response => response.blob())
-                .then(blob => {
-                    const file = new File([blob], fileName, { type: "application/octet-stream" });
-                    const url = URL.createObjectURL(blob);
+            try {
+                const response = await fetch(fileUrl);
+                const blob = await response.blob();
+                
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function() {
+                    const base64data = reader.result.split(',')[1];
                     
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = fileName;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(url);
+                    // Пытаемся открыть через специальный URL для Delta Chat
+                    const dcLink = `webxdc://sendToChat?file=${encodeURIComponent(fileName)}&data=${encodeURIComponent(base64data)}`;
                     
-                    alert('Файл скачан. Откройте Delta Chat и отправьте его в любой чат, чтобы открыть.');
-                });
+                    // Пробуем открыть
+                    window.location.href = dcLink;
+                    
+                    // Если не сработало через 500мс, показываем инструкцию
+                    setTimeout(() => {
+                        // Скачиваем как запасной вариант
+                        const a = document.createElement('a');
+                        a.href = URL.createObjectURL(blob);
+                        a.download = fileName;
+                        a.click();
+                        URL.revokeObjectURL(a.href);
+                        
+                        alert('Delta Chat не открылся автоматически.\n\nФайл скачан. Теперь:\n1. Откройте Delta Chat\n2. Зайдите в любой чат\n3. Нажмите скрепку (📎)\n4. Выберите "Файл" и отправьте скачанный файл');
+                    }, 500);
+                };
+            } catch (error) {
+                alert('Ошибка загрузки файла. Проверьте соединение.');
+                console.error(error);
+            }
         }
     </script>
 </body>
