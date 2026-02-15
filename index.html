@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 xdc-rawneko / webxdc collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lang-switch {
+            background: #edf2f7;
+            padding: 8px;
+            border-radius: 50px;
+            display: inline-flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: transparent;
+            color: #4a5568;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .subtitle {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .app-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+
+        .app-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            background: #f7fafc;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+
+        .app-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+
+        .app-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .app-size {
+            background: #edf2f7;
+            padding: 4px 10px;
+            border-radius: 50px;
+        }
+
+        .download-badge {
+            background: #48bb78;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.85em;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #718096;
+            grid-column: 1 / -1;
+        }
+
+        .error {
+            text-align: center;
+            padding: 60px 20px;
+            color: #e53e3e;
+            grid-column: 1 / -1;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9em;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📦 xdc-rawneko</h1>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('ru')">RU</button>
+            </div>
+        </div>
+
+        <div id="subtitle" class="subtitle">Loading collection...</div>
+
+        <div id="app-grid" class="app-grid">
+            <div class="loading">⏳ Loading apps...</div>
+        </div>
+
+        <div class="footer">
+            <p>📥 Download .xdc files and share in any Delta Chat chat</p>
+            <p>🔗 <a href="https://github.com/zyphralex/xdc-rawneko" target="_blank">github.com/zyphralex/xdc-rawneko</a></p>
+        </div>
+    </div>
+
+    <script>
+        const texts = {
+            en: {
+                subtitle: 'Free webxdc apps collection. No updates, just download and share.',
+                loading: '⏳ Loading apps...',
+                error: '❌ Failed to load apps list',
+                empty: '📂 No apps found in collection',
+                download: 'Download',
+                size: 'Size',
+                footer: 'Download .xdc files and share in any Delta Chat chat'
+            },
+            ru: {
+                subtitle: 'Бесплатная коллекция webxdc приложений. Без обновлений, просто скачай и делись.',
+                loading: '⏳ Загрузка приложений...',
+                error: '❌ Не удалось загрузить список',
+                empty: '📂 В коллекции пока нет приложений',
+                download: 'Скачать',
+                size: 'Размер',
+                footer: 'Скачивай .xdc файлы и кидай в любой чат Delta Chat'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang.toUpperCase())) {
+                    btn.classList.add('active');
+                }
+        });
+            updateTexts();
+        }
+
+        function updateTexts() {
+            const t = texts[currentLang];
+            document.getElementById('subtitle').textContent = t.subtitle;
+        }
+
+        async function loadApps() {
+            const grid = document.getElementById('app-grid');
+            
+            try {
+                const response = await fetch('https://api.github.com/repos/zyphralex/xdc-rawneko/contents/apps');
+                
+                if (!response.ok) {
+                    throw new Error('GitHub API error');
+                }
+
+                const files = await response.json();
+                const xdcFiles = files.filter(f => f.name.toLowerCase().endsWith('.xdc'));
+
+                if (xdcFiles.length === 0) {
+                    grid.innerHTML = `<div class="error">${texts[currentLang].empty}</div>`;
+                    return;
+                }
+
+                grid.innerHTML = '';
+                
+                xdcFiles.sort((a, b) => a.name.localeCompare(b.name)).forEach(file => {
+                    const size = (file.size / 1024).toFixed(1);
+                    const name = file.name.replace(/\.xdc$/i, '').replace(/[-_]/g, ' ');
+                    const icon = getIconForApp(file.name);
+                    
+                    const card = document.createElement('div');
+                    card.className = 'app-card';
+                    card.innerHTML = `
+                        <a href="${file.download_url}" class="app-link" download>
+                            <div class="app-icon">${icon}</div>
+                            <div class="app-name">${name}</div>
+                            <div class="app-meta">
+                                <span class="app-size">${texts[currentLang].size}: ${size} KB</span>
+                                <span class="download-badge">⬇️ ${texts[currentLang].download}</span>
+                            </div>
+                        </a>
+                    `;
+                    grid.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error(error);
+                grid.innerHTML = `<div class="error">${texts[currentLang].error}</div>`;
+            }
+        }
+
+        function getIconForApp(filename) {
+            const name = filename.toLowerCase();
+            if (name.includes('tetris')) return '🎮';
+            if (name.includes('snake')) return '🐍';
+            if (name.includes('chess')) return '♟️';
+            if (name.includes('calc')) return '🧮';
+            if (name.includes('pixel') || name.includes('social')) return '🖼️';
+            if (name.includes('realtime')) return '⚡';
+            if (name.includes('video') || name.includes('call')) return '📹';
+            if (name.includes('game')) return '🎲';
+            if (name.includes('stick')) return '📋';
+            return '📦';
+        }
+
+        loadApps();
+    </script>
+</body>
+</html>
