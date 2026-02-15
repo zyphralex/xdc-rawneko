@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 xdc-rawneko / webxdc collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #2d3748;
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        .app-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+        .app-icon-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .app-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            background: #f7fafc;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        }
+        .app-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+            word-break: break-word;
+        }
+        .app-author {
+            color: #718096;
+            font-size: 0.9em;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9em;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 xdc-rawneko</h1>
+        <p class="subtitle">Коллекция webxdc приложений для Delta Chat. Нажми на приложение для деталей.</p>
+        
+        <div class="app-grid">
+
+            <div class="app-card" onclick="location.href='app_1.html'">
+                <div class="app-link">
+                    <img src="icons/app_1.png" class="app-icon-img" alt="arcanecircle-2048-v2.4.0.xdc">
+                    <div class="app-name">2048</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_2.html'">
+                <div class="app-link">
+                    <img src="icons/app_2.png" class="app-icon-img" alt="arcanecircle-amazingtrack-v0.1.0.xdc">
+                    <div class="app-name">AmazingTrack</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_3.html'">
+                <div class="app-link">
+                    <img src="icons/app_3.png" class="app-icon-img" alt="arcanecircle-arkanoid-v3.10.0.xdc">
+                    <div class="app-name">Arkanoid</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_4.html'">
+                <div class="app-link">
+                    <img src="icons/app_4.png" class="app-icon-img" alt="arcanecircle-audiodash-v1.1.0.xdc">
+                    <div class="app-name">Audio Dash</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_5.html'">
+                <div class="app-link">
+                    <img src="icons/app_5.png" class="app-icon-img" alt="arcanecircle-babeldungeon-de-es-v3.7.0.xdc">
+                    <div class="app-name">Babel Dungeon (🇩🇪/🇪🇸)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_6.html'">
+                <div class="app-link">
+                    <img src="icons/app_6.png" class="app-icon-img" alt="arcanecircle-babeldungeon-en-es-v3.7.0.xdc">
+                    <div class="app-name">Babel Dungeon (🇬🇧/🇪🇸)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_7.html'">
+                <div class="app-link">
+                    <img src="icons/app_7.png" class="app-icon-img" alt="arcanecircle-babeldungeon-eo-en-v3.7.0.xdc">
+                    <div class="app-name">Babel Dungeon (Esperanto)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_8.html'">
+                <div class="app-link">
+                    <img src="icons/app_8.png" class="app-icon-img" alt="arcanecircle-babeldungeon-fr-en-v3.7.0.xdc">
+                    <div class="app-name">Babel Dungeon (🇫🇷/🇬🇧)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_9.html'">
+                <div class="app-link">
+                    <img src="icons/app_9.png" class="app-icon-img" alt="arcanecircle-babeldungeon-it-en-v3.7.0.xdc">
+                    <div class="app-name">Babel Dungeon (🇮🇹/🇬🇧)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_10.html'">
+                <div class="app-link">
+                    <img src="icons/app_10.png" class="app-icon-img" alt="arcanecircle-babeldungeon-jp-en-v3.7.0.xdc">
+                    <div class="app-name">Babel Dungeon (🇯🇵/🇬🇧)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_11.html'">
+                <div class="app-link">
+                    <img src="icons/app_11.png" class="app-icon-img" alt="arcanecircle-babeldungeon-pt-en-v3.6.0.xdc">
+                    <div class="app-name">Babel Dungeon (🇵🇹/🇬🇧)</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_12.html'">
+                <div class="app-link">
+                    <img src="icons/app_12.jpg" class="app-icon-img" alt="arcanecircle-back-up-v1.2.0.xdc">
+                    <div class="app-name">Get Back Up</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_13.html'">
+                <div class="app-link">
+                    <img src="icons/app_13.png" class="app-icon-img" alt="arcanecircle-backread-v2.2.0.xdc">
+                    <div class="app-name">Back Read</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_14.html'">
+                <div class="app-link">
+                    <img src="icons/app_14.png" class="app-icon-img" alt="arcanecircle-bejeweled-v1.4.0.xdc">
+                    <div class="app-name">Dejeweled</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_15.html'">
+                <div class="app-link">
+                    <img src="icons/app_15.png" class="app-icon-img" alt="arcanecircle-c4-v1.2.0.xdc">
+                    <div class="app-name">Connect4</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_16.html'">
+                <div class="app-link">
+                    <img src="icons/app_16.png" class="app-icon-img" alt="arcanecircle-casual-crusade-v1.2.0.xdc">
+                    <div class="app-name">Casual Crusade</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_17.html'">
+                <div class="app-link">
+                    <img src="icons/app_17.png" class="app-icon-img" alt="arcanecircle-chess-v2.4.0.xdc">
+                    <div class="app-name">Chess</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_18.html'">
+                <div class="app-link">
+                    <img src="icons/app_18.png" class="app-icon-img" alt="arcanecircle-color-lines-v3.2.0.xdc">
+                    <div class="app-name">Color Lines</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_19.html'">
+                <div class="app-link">
+                    <img src="icons/app_19.png" class="app-icon-img" alt="arcanecircle-coloron-v0.3.0.xdc">
+                    <div class="app-name">Coloron</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_20.html'">
+                <div class="app-link">
+                    <img src="icons/app_20.png" class="app-icon-img" alt="arcanecircle-coupahoo-v0.3.0.xdc">
+                    <div class="app-name">Coup Ahoo</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_21.html'">
+                <div class="app-link">
+                    <img src="icons/app_21.png" class="app-icon-img" alt="arcanecircle-crappybird-v1.5.0.xdc">
+                    <div class="app-name">CrappyBird</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_22.html'">
+                <div class="app-link">
+                    <img src="icons/app_22.png" class="app-icon-img" alt="arcanecircle-crashdown-v1.0.0.xdc">
+                    <div class="app-name">Crashdown</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_23.html'">
+                <div class="app-link">
+                    <img src="icons/app_23.png" class="app-icon-img" alt="arcanecircle-dino-v1.3.0.xdc">
+                    <div class="app-name">Dino</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_24.html'">
+                <div class="app-link">
+                    <img src="icons/app_24.png" class="app-icon-img" alt="arcanecircle-dogspinner-v0.1.0.xdc">
+                    <div class="app-name">DOG SPINNER</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_25.html'">
+                <div class="app-link">
+                    <img src="icons/app_25.png" class="app-icon-img" alt="arcanecircle-draw-v3.4.0.xdc">
+                    <div class="app-name">Draw</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_26.html'">
+                <div class="app-link">
+                    <img src="icons/app_26.png" class="app-icon-img" alt="arcanecircle-filesync-v0.1.0.xdc">
+                    <div class="app-name">File Sync</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_27.html'">
+                <div class="app-link">
+                    <img src="icons/app_27.png" class="app-icon-img" alt="arcanecircle-forgottendepths-v1.4.0.xdc">
+                    <div class="app-name">Forgotten Depths</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_28.html'">
+                <div class="app-link">
+                    <img src="icons/app_28.jpg" class="app-icon-img" alt="arcanecircle-fspider-v1.4.0.xdc">
+                    <div class="app-name">fSpider</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_29.html'">
+                <div class="app-link">
+                    <img src="icons/app_29.png" class="app-icon-img" alt="arcanecircle-gibbonacci-v1.3.0.xdc">
+                    <div class="app-name">Gibbonacci</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_30.html'">
+                <div class="app-link">
+                    <img src="icons/app_30.png" class="app-icon-img" alt="arcanecircle-knight-arena-v1.3.0.xdc">
+                    <div class="app-name">Knight Arena</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_31.html'">
+                <div class="app-link">
+                    <img src="icons/app_31.png" class="app-icon-img" alt="arcanecircle-livechat-v0.5.0.xdc">
+                    <div class="app-name">Live Chat</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_32.html'">
+                <div class="app-link">
+                    <img src="icons/app_32.png" class="app-icon-img" alt="arcanecircle-mah-v1.7.0.xdc">
+                    <div class="app-name">Mahjong</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_33.html'">
+                <div class="app-link">
+                    <img src="icons/app_33.png" class="app-icon-img" alt="arcanecircle-minesweeper-v1.0.1.xdc">
+                    <div class="app-name">Minesweeper</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_34.html'">
+                <div class="app-link">
+                    <img src="icons/app_34.png" class="app-icon-img" alt="arcanecircle-mood-v0.2.0.xdc">
+                    <div class="app-name">Mood</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_35.html'">
+                <div class="app-link">
+                    <img src="icons/app_35.png" class="app-icon-img" alt="arcanecircle-musasquest-v2.2.0.xdc">
+                    <div class="app-name">Musa's Quest</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_36.html'">
+                <div class="app-link">
+                    <img src="icons/app_36.png" class="app-icon-img" alt="arcanecircle-necroticcommander-v1.2.0.xdc">
+                    <div class="app-name">Necrotic Commander</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_37.html'">
+                <div class="app-link">
+                    <img src="icons/app_37.png" class="app-icon-img" alt="arcanecircle-numberknight-v0.3.0.xdc">
+                    <div class="app-name">Number Knight</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_38.html'">
+                <div class="app-link">
+                    <img src="icons/app_38.png" class="app-icon-img" alt="arcanecircle-othello-v2.2.0.xdc">
+                    <div class="app-name">Othello</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_39.html'">
+                <div class="app-link">
+                    <img src="icons/app_39.png" class="app-icon-img" alt="arcanecircle-pixel-dungeon-v1.5.0.xdc">
+                    <div class="app-name">Arcane Dungeon</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_40.html'">
+                <div class="app-link">
+                    <img src="icons/app_40.png" class="app-icon-img" alt="arcanecircle-pixel-v0.5.0.xdc">
+                    <div class="app-name">Color Pixel</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_41.html'">
+                <div class="app-link">
+                    <img src="icons/app_41.png" class="app-icon-img" alt="arcanecircle-pixelrickroll-v0.4.0.xdc">
+                    <div class="app-name">Pixel Beat</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_42.html'">
+                <div class="app-link">
+                    <img src="icons/app_42.png" class="app-icon-img" alt="arcanecircle-pixelsocial-v0.15.0.xdc">
+                    <div class="app-name">PixelSocial</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_43.html'">
+                <div class="app-link">
+                    <img src="icons/app_43.png" class="app-icon-img" alt="arcanecircle-power-crisis-v0.4.0.xdc">
+                    <div class="app-name">Power Crisis</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_44.html'">
+                <div class="app-link">
+                    <img src="icons/app_44.png" class="app-icon-img" alt="arcanecircle-rainbow-v1.3.0.xdc">
+                    <div class="app-name">Rainbow</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_45.html'">
+                <div class="app-link">
+                    <img src="icons/app_45.png" class="app-icon-img" alt="arcanecircle-ruffle-v1.0.0.xdc">
+                    <div class="app-name">Ruffle</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_46.html'">
+                <div class="app-link">
+                    <img src="icons/app_46.png" class="app-icon-img" alt="arcanecircle-runekeeper-v1.2.0.xdc">
+                    <div class="app-name">Runekeeper</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_47.html'">
+                <div class="app-link">
+                    <img src="icons/app_47.png" class="app-icon-img" alt="arcanecircle-screen-message-v1.0.0.xdc">
+                    <div class="app-name">Screen Message</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_48.html'">
+                <div class="app-link">
+                    <img src="icons/app_48.png" class="app-icon-img" alt="arcanecircle-sector13-v0.3.0.xdc">
+                    <div class="app-name">SECTOR 13</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_49.html'">
+                <div class="app-link">
+                    <img src="icons/app_49.png" class="app-icon-img" alt="arcanecircle-snake-v1.3.0.xdc">
+                    <div class="app-name">Snake</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_50.html'">
+                <div class="app-link">
+                    <img src="icons/app_50.png" class="app-icon-img" alt="arcanecircle-spirit-dungeons-v1.2.0.xdc">
+                    <div class="app-name">Spirit Dungeons</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_51.html'">
+                <div class="app-link">
+                    <img src="icons/app_51.png" class="app-icon-img" alt="arcanecircle-stackup-v1.3.1.xdc">
+                    <div class="app-name">StackUp!</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_52.html'">
+                <div class="app-link">
+                    <img src="icons/app_52.png" class="app-icon-img" alt="arcanecircle-stolen-sword-v1.3.0.xdc">
+                    <div class="app-name">Stolen Sword</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_53.html'">
+                <div class="app-link">
+                    <img src="icons/app_53.png" class="app-icon-img" alt="arcanecircle-sudoku-v1.3.0.xdc">
+                    <div class="app-name">Sudoku</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_54.html'">
+                <div class="app-link">
+                    <img src="icons/app_54.png" class="app-icon-img" alt="arcanecircle-super-bunny-v0.12.0.xdc">
+                    <div class="app-name">Super Bunny</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_55.html'">
+                <div class="app-link">
+                    <img src="icons/app_55.png" class="app-icon-img" alt="arcanecircle-super-castle-v1.3.0.xdc">
+                    <div class="app-name">Super Castle</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_56.html'">
+                <div class="app-link">
+                    <img src="icons/app_56.png" class="app-icon-img" alt="arcanecircle-takuzu-v2.2.0.xdc">
+                    <div class="app-name">Takuzu</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_57.html'">
+                <div class="app-link">
+                    <img src="icons/app_57.png" class="app-icon-img" alt="arcanecircle-templarsfinalstand-v0.4.0.xdc">
+                    <div class="app-name">Templar's Final Stand</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_58.html'">
+                <div class="app-link">
+                    <img src="icons/app_58.png" class="app-icon-img" alt="arcanecircle-terraformers-v2.2.0.xdc">
+                    <div class="app-name">Terraformers</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_59.html'">
+                <div class="app-link">
+                    <img src="icons/app_59.png" class="app-icon-img" alt="arcanecircle-tetris-v2.3.0.xdc">
+                    <div class="app-name">Tetris</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_60.html'">
+                <div class="app-link">
+                    <img src="icons/app_60.png" class="app-icon-img" alt="arcanecircle-textcards-v0.6.0.xdc">
+                    <div class="app-name">Text Cards</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_61.html'">
+                <div class="app-link">
+                    <img src="icons/app_61.png" class="app-icon-img" alt="arcanecircle-the-cube-v1.3.0.xdc">
+                    <div class="app-name">The Cube</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_62.html'">
+                <div class="app-link">
+                    <img src="icons/app_62.png" class="app-icon-img" alt="arcanecircle-tic80-v1.2.0-beta.xdc">
+                    <div class="app-name">TIC-80</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_63.html'">
+                <div class="app-link">
+                    <img src="icons/app_63.png" class="app-icon-img" alt="arcanecircle-tictactoe-v2.2.0.xdc">
+                    <div class="app-name">Tic Tac Toe</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_64.html'">
+                <div class="app-link">
+                    <img src="icons/app_64.png" class="app-icon-img" alt="arcanecircle-tiny-yurts-v1.2.0.xdc">
+                    <div class="app-name">Tiny Yurts</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_65.html'">
+                <div class="app-link">
+                    <img src="icons/app_65.png" class="app-icon-img" alt="arcanecircle-triska-v2.2.0.xdc">
+                    <div class="app-name">Triska Reloaded</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_66.html'">
+                <div class="app-link">
+                    <img src="icons/app_66.png" class="app-icon-img" alt="arcanecircle-whack-a-ninja-v1.2.0.xdc">
+                    <div class="app-name">Whack-A-Ninja</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_67.html'">
+                <div class="app-link">
+                    <img src="icons/app_67.png" class="app-icon-img" alt="arcanecircle-wonster-v3.3.0.xdc">
+                    <div class="app-name">Wonster</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_68.html'">
+                <div class="app-link">
+                    <img src="icons/app_68.png" class="app-icon-img" alt="arcanecircle-workitout-v1.6.0.xdc">
+                    <div class="app-name">WorkItOut</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_69.html'">
+                <div class="app-link">
+                    <img src="icons/app_69.png" class="app-icon-img" alt="bespinas-conviu-v1.0.0.xdc">
+                    <div class="app-name">Conviu</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_70.html'">
+                <div class="app-link">
+                    <img src="icons/app_70.png" class="app-icon-img" alt="bespinas-divvy-bill-v1.0.0.xdc">
+                    <div class="app-name">Divvy Bill</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_71.html'">
+                <div class="app-link">
+                    <img src="icons/app_71.png" class="app-icon-img" alt="davidsm10-crypto-whisper-v1.2.0.xdc">
+                    <div class="app-name">CryptoWhisper</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_72.html'">
+                <div class="app-link">
+                    <img src="icons/app_72.png" class="app-icon-img" alt="davidsm10-cryptotext-v3.2.1.xdc">
+                    <div class="app-name">CryptoText</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_73.html'">
+                <div class="app-link">
+                    <img src="icons/app_73.png" class="app-icon-img" alt="davidsm10-email-composer-v1.3.4.xdc">
+                    <div class="app-name">E-mail Composer</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_74.html'">
+                <div class="app-link">
+                    <img src="icons/app_74.png" class="app-icon-img" alt="davidsm10-poll-v1.3.xdc">
+                    <div class="app-name">Poll</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_75.html'">
+                <div class="app-link">
+                    <img src="icons/app_75.png" class="app-icon-img" alt="davidsm10-sharer-v2.3.0.xdc">
+                    <div class="app-name">Sharer</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_76.html'">
+                <div class="app-link">
+                    <img src="icons/app_76.png" class="app-icon-img" alt="davidsm10-webxdc-code-playground-v0.3.0.xdc">
+                    <div class="app-name">Code Playground</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_77.html'">
+                <div class="app-link">
+                    <img src="icons/app_77.png" class="app-icon-img" alt="dice-box-v2.0.1.xdc">
+                    <div class="app-name">3D Dice Box</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_78.html'">
+                <div class="app-link">
+                    <img src="icons/app_78.png" class="app-icon-img" alt="durian-colors-0.1.17.xdc">
+                    <div class="app-name">So Many Colors!</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_79.html'">
+                <div class="app-link">
+                    <img src="icons/app_79.png" class="app-icon-img" alt="durian-ice-0.1.2.xdc">
+                    <div class="app-name">Found ICE</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_80.html'">
+                <div class="app-link">
+                    <img src="icons/app_80.png" class="app-icon-img" alt="durian-moments-0.2.30.1.xdc">
+                    <div class="app-name">Tiny Moments</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_81.html'">
+                <div class="app-link">
+                    <img src="icons/app_81.png" class="app-icon-img" alt="durian-rain-v1.15.xdc">
+                    <div class="app-name">Rain Soundscape</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_82.html'">
+                <div class="app-link">
+                    <img src="icons/app_82.png" class="app-icon-img" alt="durian-realtime-editor-v4.0.4.xdc">
+                    <div class="app-name">Realtime Editor</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_83.html'">
+                <div class="app-link">
+                    <img src="icons/app_83.png" class="app-icon-img" alt="durian-river-v1.xdc">
+                    <div class="app-name">River Soundscape</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_84.html'">
+                <div class="app-link">
+                    <img src="icons/app_84.png" class="app-icon-img" alt="durian-splitbill-1.2.xdc">
+                    <div class="app-name">Split Bill</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_85.html'">
+                <div class="app-link">
+                    <img src="icons/app_85.png" class="app-icon-img" alt="durian-time-0.2.11.4.xdc">
+                    <div class="app-name">What Time?</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_86.html'">
+                <div class="app-link">
+                    <img src="icons/app_86.png" class="app-icon-img" alt="durian-todolist-v0.0.9.xdc">
+                    <div class="app-name">To-do list</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_87.html'">
+                <div class="app-link">
+                    <img src="icons/app_87.png" class="app-icon-img" alt="grzgrz-fundit-v1.0.1.xdc">
+                    <div class="app-name">Fund It!</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_88.html'">
+                <div class="app-link">
+                    <img src="icons/app_88.png" class="app-icon-img" alt="guile-hoot-meta-repl-0.2.0.xdc">
+                    <div class="app-name">Guile Hoot Metacircular REPL</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_89.html'">
+                <div class="app-link">
+                    <img src="icons/app_89.png" class="app-icon-img" alt="hupf-shopping-list-v1.4.xdc">
+                    <div class="app-name">Shopping List</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_90.html'">
+                <div class="app-link">
+                    <img src="icons/app_90.png" class="app-icon-img" alt="image-album-1.4.xdc">
+                    <div class="app-name">Image Album</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_91.html'">
+                <div class="app-link">
+                    <img src="icons/app_91.png" class="app-icon-img" alt="jooray-d21poll-v1.0.xdc">
+                    <div class="app-name">D21 Poll</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_92.html'">
+                <div class="app-link">
+                    <img src="icons/app_92.png" class="app-icon-img" alt="link2xt-count-v1.xdc">
+                    <div class="app-name">Chatters cannot count</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_93.html'">
+                <div class="app-link">
+                    <img src="icons/app_93.png" class="app-icon-img" alt="link2xt-skedz-v2.xdc">
+                    <div class="app-name">Skedz</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_94.html'">
+                <div class="app-link">
+                    <img src="icons/app_94.png" class="app-icon-img" alt="maplediss-quiet-journal-1.1.xdc">
+                    <div class="app-name">Quiet Journal</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_95.html'">
+                <div class="app-link">
+                    <img src="icons/app_95.png" class="app-icon-img" alt="memory-blocks-v0.0.1.xdc">
+                    <div class="app-name">Memory Blocks</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_96.html'">
+                <div class="app-link">
+                    <img src="icons/app_96.png" class="app-icon-img" alt="ms702-v86emu-v0.8.1.xdc">
+                    <div class="app-name">v86Emu</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_97.html'">
+                <div class="app-link">
+                    <img src="icons/app_97.png" class="app-icon-img" alt="muslim-prayer-times-v0.8.0.xdc">
+                    <div class="app-name">Muslim Prayer Times</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_98.html'">
+                <div class="app-link">
+                    <img src="icons/app_98.png" class="app-icon-img" alt="nelson9608-calculator-xdc-V1.0.0.xdc">
+                    <div class="app-name">Calculator</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_99.html'">
+                <div class="app-link">
+                    <img src="icons/app_99.png" class="app-icon-img" alt="r10s-asc-to-vcard-1.0.1.xdc">
+                    <div class="app-name">.asc to VCard</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_100.html'">
+                <div class="app-link">
+                    <img src="icons/app_100.png" class="app-icon-img" alt="r10s-congrats-1.0.1.xdc">
+                    <div class="app-name">Congrats!</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_101.html'">
+                <div class="app-link">
+                    <img src="icons/app_101.png" class="app-icon-img" alt="r10s-hextris-1.4.0.xdc">
+                    <div class="app-name">Hextris</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_102.html'">
+                <div class="app-link">
+                    <img src="icons/app_102.png" class="app-icon-img" alt="r10s-pac-1d-1.1.0.xdc">
+                    <div class="app-name">Pac-1D</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_103.html'">
+                <div class="app-link">
+                    <img src="icons/app_103.png" class="app-icon-img" alt="r10s-packabunchas-1.0.0.xdc">
+                    <div class="app-name">Packabunchas</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_104.html'">
+                <div class="app-link">
+                    <img src="icons/app_104.png" class="app-icon-img" alt="r10s-tower-builder-1.1.1.xdc">
+                    <div class="app-name">Tower Builder</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_105.html'">
+                <div class="app-link">
+                    <img src="icons/app_105.png" class="app-icon-img" alt="rtn-decker-v1.5.0.xdc">
+                    <div class="app-name">Decker</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_106.html'">
+                <div class="app-link">
+                    <img src="icons/app_106.png" class="app-icon-img" alt="rtn-totp-v1.1.0.xdc">
+                    <div class="app-name">TOTP</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_107.html'">
+                <div class="app-link">
+                    <img src="icons/app_107.png" class="app-icon-img" alt="s427-marl-v2.13.xdc">
+                    <div class="app-name">MARL</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_108.html'">
+                <div class="app-link">
+                    <img src="icons/app_108.jpg" class="app-icon-img" alt="simon-event-planner-v0.0.0.xdc">
+                    <div class="app-name">Event Planner</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_109.html'">
+                <div class="app-link">
+                    <img src="icons/app_109.png" class="app-icon-img" alt="simon-timetracking-v0.10.1.xdc">
+                    <div class="app-name">TimeTracking</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_110.html'">
+                <div class="app-link">
+                    <img src="icons/app_110.jpg" class="app-icon-img" alt="the-wandering-wraith-v1.0.2.xdc">
+                    <div class="app-name">The Wandering Wraith</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_111.html'">
+                <div class="app-link">
+                    <img src="icons/app_111.png" class="app-icon-img" alt="webratte-event-countdown-v1.1.1.xdc">
+                    <div class="app-name">Event Countdown</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_112.html'">
+                <div class="app-link">
+                    <img src="icons/app_112.png" class="app-icon-img" alt="webratte-i-got-time-v1.0.1.xdc">
+                    <div class="app-name">I got time</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_113.html'">
+                <div class="app-link">
+                    <img src="icons/app_113.png" class="app-icon-img" alt="webratte-shared-memo-v2.1.xdc">
+                    <div class="app-name">Shared Memo</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_114.html'">
+                <div class="app-link">
+                    <img src="icons/app_114.png" class="app-icon-img" alt="webxdc-calc-v1.0.xdc">
+                    <div class="app-name">Calc</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_115.html'">
+                <div class="app-link">
+                    <img src="icons/app_115.png" class="app-icon-img" alt="webxdc-calendar-v1.1.0.xdc">
+                    <div class="app-name">Calendar</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_116.html'">
+                <div class="app-link">
+                    <img src="icons/app_116.png" class="app-icon-img" alt="webxdc-checklist-v0.0.3.xdc">
+                    <div class="app-name">Checklist</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_117.html'">
+                <div class="app-link">
+                    <img src="icons/app_117.png" class="app-icon-img" alt="webxdc-clocksync-v1.xdc">
+                    <div class="app-name">Clock sync</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_118.html'">
+                <div class="app-link">
+                    <img src="icons/app_118.jpg" class="app-icon-img" alt="webxdc-corkboard-v0.0.2.xdc">
+                    <div class="app-name">Corkboard</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_119.html'">
+                <div class="app-link">
+                    <img src="icons/app_119.png" class="app-icon-img" alt="webxdc-editor-v3.2.0.xdc">
+                    <div class="app-name">Editor</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_120.html'">
+                <div class="app-link">
+                    <img src="icons/app_120.png" class="app-icon-img" alt="webxdc-pixel-v2.xdc">
+                    <div class="app-name">Pixel</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_121.html'">
+                <div class="app-link">
+                    <img src="icons/app_121.png" class="app-icon-img" alt="webxdc-poll-1.0.2.xdc">
+                    <div class="app-name">Poll</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_122.html'">
+                <div class="app-link">
+                    <img src="icons/app_122.png" class="app-icon-img" alt="webxdc-pong-v4.xdc">
+                    <div class="app-name">Pong</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_123.html'">
+                <div class="app-link">
+                    <img src="icons/app_123.png" class="app-icon-img" alt="webxdc-realtime-check-v1.0.6.xdc">
+                    <div class="app-name">Realtime Check</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_124.html'">
+                <div class="app-link">
+                    <img src="icons/app_124.png" class="app-icon-img" alt="webxdc-test-1.5.0.xdc">
+                    <div class="app-name">Test Webxdc</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_125.html'">
+                <div class="app-link">
+                    <img src="icons/app_125.png" class="app-icon-img" alt="wofwca-quake3-v4.0.3.xdc">
+                    <div class="app-name">Quake III Arena</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+            <div class="app-card" onclick="location.href='app_126.html'">
+                <div class="app-link">
+                    <img src="icons/app_126.png" class="app-icon-img" alt="zerosum-table-v1.0.xdc">
+                    <div class="app-name">Zero-sum Table</div>
+                    <div class="app-author">Unknown</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>📥 Всего приложений: 126</p>
+            <p>🔗 <a href="https://github.com/zyphralex/xdc-rawneko" target="_blank">github.com/zyphralex/xdc-rawneko</a></p>
+        </div>
+    </div>
+</body>
+</html>

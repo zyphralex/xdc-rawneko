@@ -49,6 +49,12 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
+        .app-icon-large-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
         .app-icon-large {
             font-size: 4em;
             background: #f7fafc;
@@ -58,12 +64,6 @@
             align-items: center;
             justify-content: center;
             border-radius: 20px;
-        }
-        .app-icon-large-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            object-fit: cover;
         }
         .app-title {
             flex: 1;
@@ -138,10 +138,10 @@
         <a href="index.html" class="back-button">← Назад к списку</a>
         
         <div class="app-header">
-            <img src="icons/app_69.png" class="app-icon-large-img" alt="Conviu">
+            <img src="icons/app_69.png" class="app-icon-large-img" alt="bespinas-conviu-v1.0.0.xdc">
             <div class="app-title">
                 <h2>Conviu</h2>
-                <p>Unknown author</p>
+                <p>Unknown</p>
             </div>
         </div>
 
@@ -154,23 +154,25 @@
                 <strong>Размер</strong>
                 38.8 KB
             </div>
-            
-            <div class="meta-item"><strong>Исходный код</strong><a href="https://codeberg.org/bespinas/conviu" target="_blank">GitHub</a></div>
+            <div class="meta-item">
+                <strong>Исходный код</strong>
+                <a href="https://codeberg.org/bespinas/conviu" target="_blank">GitHub</a>
+            </div>
         </div>
-
         
-
+        
+        
         <p><strong>tag_name:</strong> v1.0.0</p>
 
-
+        
         <div class="button-group">
             <a href="apps/bespinas-conviu-v1.0.0.xdc" download class="button button-primary">⬇️ Скачать .xdc</a>
-            <button class="button button-secondary" onclick="openInDeltaChat()">📱 Открыть в Delta Chat</button>
+            <button class="button button-secondary" onclick="downloadAndOpen()">📱 Открыть в Delta Chat</button>
         </div>
     </div>
 
     <script>
-        function openInDeltaChat() {
+        function downloadAndOpen() {
             const fileName = "bespinas-conviu-v1.0.0.xdc";
             const fileUrl = "apps/" + fileName;
             
@@ -188,7 +190,7 @@
                     document.body.removeChild(link);
                     URL.revokeObjectURL(url);
                     
-                    alert('Файл скачан. Откройте Delta Chat и отправьте его в чат, чтобы использовать.');
+                    alert('Файл скачан. Откройте Delta Chat и отправьте его в любой чат, чтобы открыть.');
                 });
         }
     </script>
